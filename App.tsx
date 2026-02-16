@@ -49,7 +49,7 @@ const App: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${context?.detected_city || 'script'}_prompts.txt`;
+    a.download = `${context?.detected_city || 'script'}_veo_prompts.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -66,13 +66,13 @@ const App: React.FC = () => {
               <ImageIcon className="text-white" size={18} />
             </div>
             <h1 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
-              Script to Image Prompter
+              Veo 3 Script Director
             </h1>
           </div>
           
           <div className="flex items-center gap-4">
              <div className="text-xs text-gray-500 font-medium border border-gray-800 px-3 py-1 rounded-full">
-               Detailed Scene Analysis
+               Veo 3 Prompt Engineering
              </div>
           </div>
         </div>
@@ -84,10 +84,10 @@ const App: React.FC = () => {
         {appState === AppState.INPUT_SCRIPT || appState === AppState.ANALYZING ? (
           <div className="flex flex-col items-center justify-center min-h-[60vh]">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold tracking-tight mb-3">Turn History into Detail</h2>
+              <h2 className="text-4xl font-bold tracking-tight mb-3">Turn History into Veo 3 Videos</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Paste your historical city script below. Our AI will break it down into immersive, 
-                high-detail image prompts perfect for cinematic generation.
+                high-detail video prompts optimized for Google Veo 3.
               </p>
             </div>
             <ScriptInput onAnalyze={handleScriptAnalysis} isAnalyzing={isProcessing} />

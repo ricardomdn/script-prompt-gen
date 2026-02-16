@@ -56,7 +56,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ segment, index, onUpdate }) => {
             
             <div className="mt-6 flex items-center gap-2 text-xs text-gray-500">
                 <ImageIcon size={12} />
-                <span>Target: 16:9 Cinematic Image</span>
+                <span>Target: 16:9 Veo 3 Video</span>
             </div>
         </div>
 
@@ -65,7 +65,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ segment, index, onUpdate }) => {
             <div className="flex justify-between items-start mb-3">
                  <h3 className="text-purple-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                     <Sparkles size={12} />
-                    Image Generation Prompt
+                    Veo 3 Video Prompt
                 </h3>
                 <div className="flex items-center gap-2">
                      <button 
@@ -86,7 +86,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ segment, index, onUpdate }) => {
                         }`}
                     >
                         {copied ? <Check size={14} /> : <Copy size={14} />}
-                        {copied ? 'Copied' : 'Copy Prompt'}
+                        {copied ? 'Copied' : 'Copy'}
                     </button>
                 </div>
             </div>

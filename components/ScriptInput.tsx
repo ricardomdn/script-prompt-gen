@@ -25,8 +25,8 @@ const ScriptInput: React.FC<ScriptInputProps> = ({ onAnalyze, isAnalyzing }) => 
             Paste Your Script
           </h2>
           <p className="text-gray-400 text-sm mt-1">
-            We will analyze the pacing, split it into scenes, and generate hyper-realistic, 
-            immersive image prompts for each segment.
+            We will analyze the pacing, split it into scenes, and generate cinematic 
+            Veo 3 video prompts for each segment (ignoring structural headers).
           </p>
         </div>
         
@@ -35,7 +35,7 @@ const ScriptInput: React.FC<ScriptInputProps> = ({ onAnalyze, isAnalyzing }) => 
             value={script}
             onChange={(e) => setScript(e.target.value)}
             className="w-full h-64 bg-gray-950 text-gray-100 border border-gray-700 rounded-lg p-4 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none transition-all placeholder-gray-600"
-            placeholder="e.g., In 1850, the streets of London were shrouded in fog. But beneath the cobblestones, a revolution was brewing..."
+            placeholder="e.g., [HOOK] In 1850, the streets of London were shrouded in fog..."
             disabled={isAnalyzing}
           />
           
@@ -59,7 +59,7 @@ const ScriptInput: React.FC<ScriptInputProps> = ({ onAnalyze, isAnalyzing }) => 
               ) : (
                 <>
                   <Wand2 size={18} />
-                  Generate Prompts
+                  Generate Veo 3 Prompts
                 </>
               )}
             </button>
