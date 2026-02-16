@@ -23,16 +23,19 @@ export const analyzeScriptAndGeneratePrompts = async (script: string): Promise<S
     - Focus on immersion: Textures, lighting, weather, and small storytelling details.
 
     STEP 2: SEGMENTATION & CLEANUP
-    - **CRITICAL: IGNORE STRUCTURAL HEADERS:** The script contains markers indicating sections. You MUST ignore these lines and NOT generate prompts for them.
-    - **SPECIFIC MARKERS TO IGNORE:**
+    - **CRITICAL: IGNORE STRUCTURAL HEADERS:** The script contains markers indicating sections. You MUST ignore these lines completely. DO NOT generate visuals for them.
+    - **SPECIFIC MARKERS TO IGNORE (Exact & Case-Insensitive):**
       - [HOOK]
       - [INTRO DANDO INDICATIVOS CURIOSOS SOBRE O TEMA]
+      - [INTRO]
       - [DESENVOLVIMENTO]
       - [ESPECIALISTAS FALANDO]
       - [GATILHO DE CURIOSIDADE]
       - [FECHAMENTO/CONCLUSAO]
-      - Any other line enclosed in square brackets [...].
-    - **ACTION:** Only generate prompts for the actual narrative/voiceover text.
+      - [FECHAMENTO]
+      - [CONCLUSAO]
+      - Any other line enclosed in square brackets [...] that acts as a header.
+    - **ACTION:** Only generate prompts for the actual narrative/voiceover text found *between* these headers.
 
     STEP 3: PROMPT ENGINEERING (Veo 3 Optimized)
     - **Goal:** Photorealistic, Cinematic, 8k, Unreal Engine 5 render style.

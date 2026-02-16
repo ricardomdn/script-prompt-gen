@@ -26,7 +26,7 @@ const ScriptInput: React.FC<ScriptInputProps> = ({ onAnalyze, isAnalyzing }) => 
           </h2>
           <p className="text-gray-400 text-sm mt-1">
             We will analyze the pacing, split it into scenes, and generate cinematic 
-            Veo 3 video prompts for each segment (ignoring structural headers).
+            Veo 3 video prompts for each segment (ignoring headers like [HOOK], [INTRO], etc).
           </p>
         </div>
         
@@ -35,7 +35,14 @@ const ScriptInput: React.FC<ScriptInputProps> = ({ onAnalyze, isAnalyzing }) => 
             value={script}
             onChange={(e) => setScript(e.target.value)}
             className="w-full h-64 bg-gray-950 text-gray-100 border border-gray-700 rounded-lg p-4 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none transition-all placeholder-gray-600"
-            placeholder="e.g., [HOOK] In 1850, the streets of London were shrouded in fog..."
+            placeholder={`[HOOK]
+Em 1850, as ruas de Londres eram cobertas por uma neblina densa...
+
+[INTRO DANDO INDICATIVOS CURIOSOS SOBRE O TEMA]
+Poucos sabem que no coração da cidade vitoriana...
+
+[DESENVOLVIMENTO]
+A revolução industrial transformou a paisagem...`}
             disabled={isAnalyzing}
           />
           
