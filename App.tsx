@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clapperboard, Layers, ChevronLeft, MapPin, Calendar, Palette, Image as ImageIcon, Download } from 'lucide-react';
+import { Layers, ChevronLeft, MapPin, Calendar, Palette, Image as ImageIcon, Download } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
 
 import ScriptInput from './components/ScriptInput';
@@ -31,7 +31,7 @@ const App: React.FC = () => {
       setAppState(AppState.REVIEW_SCENES);
     } catch (error) {
       console.error("Analysis failed:", error);
-      alert("Failed to analyze script. Please try again.");
+      alert("Failed to analyze script. Check your API_KEY configuration in Vercel.");
       setAppState(AppState.INPUT_SCRIPT);
     } finally {
       setIsProcessing(false);
